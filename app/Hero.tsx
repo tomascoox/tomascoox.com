@@ -13,18 +13,18 @@ const paragraphWords = fullParagraph.split(/\s+/)
 
 const Hero = () => {
     return (
-        <div className="min-h-screen bg-black relative">
+        <div className="min-h-screen bg-black relative overflow-visible">
             <div className="absolute inset-0 overflow-visible">
                 <Spotlights />
             </div>
 
-            <div className="relative z-10 pt-20 pb-20">
-                <div className="max-w-[90vw] md:max-w-2xl lg:max-w-[80vw] mx-auto">
+            <div className="relative z-10 pt-20 pb-20 overflow-visible">
+                <div className="max-w-[90vw] md:max-w-2xl lg:max-w-[80vw] mx-auto overflow-visible">
                     <h2 className="uppercase tracking-widest text-xs text-center text-blue-100 mx-auto">
                         WELCOME TO TOMASCOOX.COM
                     </h2>
 
-                    <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-10 mt-8">
+                    <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-10 mt-8 overflow-visible">
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
@@ -33,10 +33,9 @@ const Hero = () => {
                                 delay: 1,
                                 ease: 'easeInOut',
                             }}
-                            className="w-60 h-60 md:w-64 md:h-64 lg:w-80 lg:h-80 flex-shrink-0 relative"
+                            className="relative flex-shrink-0 overflow-visible will-change-transform"
                         >
-                            <div className="absolute inset-0 rounded-full bg-white opacity-40 blur-md"></div>
-                            <div className="w-full h-full rounded-full overflow-hidden relative z-10">
+                            <div className="rounded-full overflow-visible relative z-10">
                                 <Image
                                     src="/tomas-cool-solglasogon.jpg"
                                     alt="Tomas Coox"
@@ -51,7 +50,7 @@ const Hero = () => {
                             </div>
                         </motion.div>
 
-                        <div className="md:flex-1 flex flex-col justify-start">
+                        <div className="md:flex-1 flex flex-col justify-start overflow-visible">
                             <TextGenerateEffect
                                 words="I love to create useful and beautiful things."
                                 className="text-center md:text-left text-[32px] md:text-4xl lg:text-5xl leading-tight"
