@@ -1,4 +1,4 @@
-// Main page
+// Main page yeah
 
 import Image from "next/image";
 
