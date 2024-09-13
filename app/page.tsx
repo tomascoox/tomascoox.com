@@ -1,4 +1,4 @@
-// Main entry of site
+// Main entry of site wow
 import Hero from '@/components/Hero'
 
 export default function Home() {
