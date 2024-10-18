@@ -2,129 +2,62 @@
 
 import React from 'react'
 import Image from 'next/image'
-import { Spotlights } from './ui/Spotlights'
-import { TextGenerateEffect } from './ui/TextGenerateEffect'
-import { motion, AnimatePresence } from 'framer-motion'
-
-const fullParagraph =
-    'I do this through songwriting, live musicianship, web- and app-development, motion graphics and animation and graphic design and layout. This portfolio is my personal playground in the field of webdevelopment and design.'
-
-const paragraphWords = fullParagraph.split(/\s+/)
+import Link from 'next/link'
 
 const Hero = () => {
     return (
-        <div className="min-h-screen bg-black relative">
-            <div className="absolute inset-0 overflow-visible">
-                <Spotlights />
-            </div>
+        <div className="min-h-screen bg-black text-white">
+            {/* Navigation */}
+            <nav className="flex justify-between items-center p-6">
+                <div className="text-2xl font-bold">fm</div>
+                <ul className="flex space-x-6">
+                    <li>
+                        <Link href="/">Home</Link>
+                    </li>
+                    <li>
+                        <Link href="/projects">Projects</Link>
+                    </li>
+                    <li>
+                        <Link href="/experience">Experience</Link>
+                    </li>
+                    <li>
+                        <Link href="/contact">Contact</Link>
+                    </li>
+                </ul>
+            </nav>
 
-            <div className="relative z-10 pt-20 pb-20">
-                <div className="max-w-[90vw] md:max-w-2xl lg:max-w-[80vw] mx-auto">
-                    <h2 className="uppercase tracking-widest text-xs text-center text-blue-100 mx-auto">
-                        WELCOME TO TOMASCOOX.COM
-                    </h2>
-
-                    <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-10 mt-8 overflow-visible">
-                        <div className="w-60 h-60 md:w-64 md:h-64 lg:w-80 lg:h-80 flex-shrink-0 relative overflow-visible">
-                            <motion.div
-                                initial={{
-                                    filter: 'blur(0px)',
-                                    WebkitFilter: 'blur(0px)',
-                                    opacity: 0,
-                                }} // Start at opacity 0
-                                animate={{
-                                    filter: 'blur(10px)',
-                                    WebkitFilter: 'blur(10px)',
-                                    opacity: [0, 0.3, 1],
-                                }} // Opacity transitions
-                                transition={{
-                                    opacity: {
-                                        // Handle opacity transitions separately
-                                        delay: 2,
-                                        duration: 2, // Fade in to 0.3 over 2 seconds
-                                        ease: 'easeInOut',
-                                        times: [0, 0.3, 1], // Control timing for 0 to 0.3 to 1
-                                        repeat: Infinity,
-                                        repeatType: 'reverse',
-                                    },
-                                    filter: {
-                                        duration: 1,
-                                        ease: 'easeInOut',
-                                        repeat: Infinity,
-                                        repeatType: 'reverse',
-                                    }, // Looping blur
-                                }}
-                                style={{
-                                    transform: 'translateZ(0)',
-                                    willChange: 'filter',
-                                }}
-                                className="w-full h-full absolute inset-0 rounded-full bg-white z-0 overflow-visible"
-                            ></motion.div>
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{
-                                    duration: 2,
-                                    delay: 1,
-                                    ease: 'easeInOut',
-                                }}
-                                className="w-full h-full rounded-full relative z-10 overflow-hidden"
-                            >
-                                <Image
-                                    src="/tomas-cool-solglasogon.jpg"
-                                    alt="Tomas Coox"
-                                    fill
-                                    sizes="(max-width: 768px) 40vw, (max-width: 1200px) 60vw, 80vw"
-                                    style={{
-                                        objectFit: 'cover',
-                                        objectPosition: 'center',
-                                    }}
-                                    className="filter grayscale"
-                                />
-                            </motion.div>
-                        </div>
-
-                        <div className="md:flex-1 flex flex-col justify-start">
-                            <TextGenerateEffect
-                                words="I love to create useful and beautiful things."
-                                className="text-center md:text-left text-[32px] md:text-4xl lg:text-5xl leading-tight"
-                            />
-                            <AnimatePresence>
-                                <div className="text-center md:text-left md:tracking-wider mb-4 text-sm md:text-base lg:text-lg mt-4 text-white">
-                                    {paragraphWords.map(
-                                        (word, index) => (
-                                            <React.Fragment
-                                                key={index}
-                                            >
-                                                <motion.span
-                                                    className="inline-block"
-                                                    initial={{
-                                                        opacity: 0,
-                                                        x: 100,
-                                                    }}
-                                                    animate={{
-                                                        opacity: 1,
-                                                        x: 0,
-                                                    }}
-                                                    transition={{
-                                                        duration: 0.8,
-                                                        delay:
-                                                            2.5 +
-                                                            index *
-                                                                0.05,
-                                                        ease: 'easeOut',
-                                                    }}
-                                                >
-                                                    {word}
-                                                </motion.span>{' '}
-                                            </React.Fragment>
-                                        )
-                                    )}
-                                </div>
-                            </AnimatePresence>
-                        </div>
+            {/* Main content */}
+            <div className="flex flex-col items-center justify-center text-center mt-20">
+                {/* Circular image */}
+                <div className="w-40 h-40 rounded-full overflow-hidden  p-1 mb-8">
+                    <div className="w-full h-full rounded-full overflow-hidden border border-white border-opacity-30">
+                        <Image
+                            src="/disney-tomas.png"
+                            alt="Tomas Coox"
+                            width={160}
+                            height={160}
+                            objectFit="cover"
+                            className="object-center -mt-3"
+                        />
                     </div>
                 </div>
+
+                {/* Main text */}
+                <h1 className="text-4xl md:text-5xl font-bold mb-4">
+                    <div>Tomas Coox</div>
+                    <div className='text-2xl mt-2'>Media-designer based in Sundsvall, Sweden</div>
+                </h1>
+
+                {/* Subtext */}
+                <p className="max-w-2xl mx-auto text-gray-400 mb-8">
+                    I am a versatile creative professional with a passion for
+                    web development, music, and animation. As a web developer,
+                    I craft engaging digital experiences. My musical background
+                    as a musician infuses my work with rhythm and harmony,
+                    while my animation skills bring static designs to life.
+                    This unique blend of talents allows me to create immersive
+                    and dynamic projects across various digital mediums.
+                </p>
             </div>
         </div>
     )
