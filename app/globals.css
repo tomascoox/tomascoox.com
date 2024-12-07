@@ -5,10 +5,15 @@
 @layer base {
   html {
     font-family: var(--font-lato), system-ui, sans-serif;
+    font-size: 18px; /* Increased from the default 16px */
   }
   
   body {
-    @apply text-white;
+    @apply text-white text-lg; /* Increased text size */
+  }
+
+  p {
+    @apply mb-6; /* Increased bottom margin for more spacing between paragraphs */
   }
 }
 
@@ -72,7 +77,7 @@ canvas {
   }
 
   .feature-text {
-    @apply text-gray max-w-md text-lg md:text-xl font-semibold opacity-0 translate-y-[100px];
+    @apply text-gray max-w-md text-xl md:text-2xl font-semibold opacity-0 translate-y-[100px]; /* Increased text size */
   }
 
   .feature-text-container {
@@ -88,7 +93,7 @@ canvas {
   }
 
   .link {
-    @apply text-blue hover:underline cursor-pointer flex items-center text-xl opacity-0 translate-y-20;
+    @apply text-blue hover:underline cursor-pointer flex items-center text-2xl opacity-0 translate-y-20; /* Increased text size */
   }
 
   .control-btn {
@@ -96,7 +101,7 @@ canvas {
   }
 
   .hero-title {
-    @apply text-center font-semibold text-3xl text-gray-100 opacity-0 max-md:mb-10;
+    @apply text-center font-semibold text-4xl md:text-5xl text-gray-100 opacity-0 max-md:mb-10; /* Increased text size */
   }
 
   .hiw-title {
@@ -104,7 +109,7 @@ canvas {
   }
 
   .hiw-subtitle {
-    @apply text-gray font-semibold text-xl md:text-2xl py-10 text-center;
+    @apply text-gray font-semibold text-2xl md:text-3xl py-10 text-center; /* Increased text size */
   }
 
   .hiw-video {
@@ -116,11 +121,11 @@ canvas {
   }
 
   .hiw-text {
-    @apply text-gray text-xl font-normal md:font-semibold;
+    @apply text-gray text-2xl font-normal md:font-semibold; /* Increased text size */
   }
 
   .hiw-bigtext {
-    @apply text-white text-3xl md:text-5xl font-normal md:font-semibold my-2;
+    @apply text-white text-4xl md:text-6xl font-normal md:font-semibold my-2; /* Increased text size */
   }
 
   .video-carousel_container {
