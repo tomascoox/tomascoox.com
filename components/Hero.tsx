@@ -17,12 +17,12 @@ const Hero = () => {
             <div className="w-72 h-72 md:w-[22rem] md:h-[22rem] rounded-full overflow-hidden p-1 mb-10">
                 <div className="w-full h-full rounded-full overflow-hidden border border-white border-opacity-30">
                     <Image
-                        src="https://res.cloudinary.com/dlgygfs0a/image/upload/f_auto,q_auto,w_560,c_fill,g_center,ar_1:1/v1733583224/tomas-cool-solglasogon_tauhyi.png"
+                        src="https://res.cloudinary.com/dlgygfs0a/image/upload/f_auto,q_auto,w_840,c_fill,g_center,ar_1:1/v1733583224/tomas-cool-solglasogon_tauhyi.png"
                         alt="Tomas Coox Portrait"
-                        width={420}
-                        height={420}
+                        width={840}
+                        height={840}
                         priority
-                        className="object-cover"
+                        className="object-cover grayscale hover:grayscale-0 transition-all duration-300"
                         sizes="(max-width: 768px) 288px, 352px"
                     />
                 </div>
