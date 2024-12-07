@@ -11,8 +11,7 @@ const Navbar = () => {
                     alt="Tomas Coox"
                     width={48}
                     height={48}
-                    objectFit="cover"
-                    className="object-center -mt-1"
+                    className="object-cover object-center -mt-1"
                 />
             </Link>
             <ul className="flex space-x-6">
