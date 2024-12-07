@@ -16,16 +16,10 @@ const Navbar = () => {
             </Link>
             <ul className="flex space-x-6">
                 <li>
-                    <Link href="/" className="hover:text-cyan-400 transition-colors">Home</Link>
+                    <Link href="/" className="hover:text-cyan-400 transition-colors">portfolio</Link>
                 </li>
                 <li>
-                    <Link href="/projects" className="hover:text-cyan-400 transition-colors">Projects</Link>
-                </li>
-                <li>
-                    <Link href="/experience" className="hover:text-cyan-400 transition-colors">Experience</Link>
-                </li>
-                <li>
-                    <Link href="/contact" className="hover:text-cyan-400 transition-colors">Contact</Link>
+                    <Link href="/about" className="hover:text-cyan-400 transition-colors">about</Link>
                 </li>
             </ul>
         </nav>
