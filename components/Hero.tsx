@@ -2,10 +2,17 @@
 
 import React from 'react'
 import Image from 'next/image'
+import { motion, useScroll, useTransform } from 'framer-motion'
 
 const Hero = () => {
+    const { scrollYProgress } = useScroll()
+    const yPos = useTransform(scrollYProgress, [0, 0.3], ['0%', '-100%'])
+
     return (
-        <div className="flex flex-col items-center justify-center text-center">
+        <motion.div 
+            className="flex flex-col items-center justify-center text-center"
+            style={{ y: yPos }}
+        >
             {/* Circular image */}
             <div className="w-72 h-72 md:w-[22rem] md:h-[22rem] rounded-full overflow-hidden p-1 mb-10">
                 <div className="w-full h-full rounded-full overflow-hidden border border-white border-opacity-30">
@@ -41,7 +48,7 @@ const Hero = () => {
                     Together, these skills create immersive experiences across contemporary&nbsp;media.
                 </p>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
