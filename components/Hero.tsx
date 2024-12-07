@@ -7,16 +7,16 @@ const Hero = () => {
     return (
         <div className="flex flex-col items-center justify-center text-center">
             {/* Circular image */}
-            <div className="w-64 h-64 rounded-full overflow-hidden p-1 mb-10">
+            <div className="w-72 h-72 md:w-[22rem] md:h-[22rem] rounded-full overflow-hidden p-1 mb-10">
                 <div className="w-full h-full rounded-full overflow-hidden border border-white border-opacity-30">
                     <Image
                         src="https://res.cloudinary.com/dlgygfs0a/image/upload/f_auto,q_auto,w_560,c_fill,g_center,ar_1:1/v1733583224/tomas-cool-solglasogon_tauhyi.png"
                         alt="Tomas Coox Portrait"
-                        width={280}
-                        height={280}
+                        width={420}
+                        height={420}
                         priority
                         className="object-cover"
-                        sizes="(max-width: 768px) 256px, 280px"
+                        sizes="(max-width: 768px) 288px, 352px"
                     />
                 </div>
             </div>
