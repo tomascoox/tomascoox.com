@@ -11,26 +11,55 @@ const Navbar = () => {
   const pathname = usePathname()
   const router = useRouter()
 
+  const smoothScroll = (targetPosition: number) => {
+    const startPosition = window.scrollY
+    const distance = targetPosition - startPosition
+    const duration = 800 // Reduced duration
+    let start: number | null = null
+
+    const animation = (currentTime: number) => {
+      if (start === null) start = currentTime
+      const timeElapsed = currentTime - start
+      const progress = Math.min(timeElapsed / duration, 1)
+
+      // Linear start, ease-out end
+      const ease = (t: number) => 
+        t < 0.2 
+          ? t // Linear for first 20%
+          : 1 - Math.pow(2, -10 * t) // Exponential ease-out for the rest
+
+      window.scrollTo(0, startPosition + distance * ease(progress))
+
+      if (progress < 1) {
+        requestAnimationFrame(animation)
+      }
+    }
+
+    requestAnimationFrame(animation)
+  }
+
   const scrollToSection = async (sectionId: string) => {
     setIsMenuOpen(false)
 
     // If we're not on the home page, navigate there first
     if (pathname !== '/') {
       await router.push('/')
-      // Wait a bit for the page to load
+      // Reduced wait time
       setTimeout(() => {
         const section = document.getElementById(sectionId)
         if (section) {
-          section.scrollIntoView({ behavior: 'smooth' })
+          const targetPosition = section.getBoundingClientRect().top + window.scrollY
+          smoothScroll(targetPosition)
         }
-      }, 100)
+      }, 50)
       return
     }
 
     // If we're already on the home page
     const section = document.getElementById(sectionId)
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' })
+      const targetPosition = section.getBoundingClientRect().top + window.scrollY
+      smoothScroll(targetPosition)
     }
   }
 
