@@ -6,7 +6,6 @@
     html {
         font-family: var(--font-lato), system-ui, sans-serif;
         font-size: 18px;
-        scroll-behavior: smooth;
         scrollbar-width: none;  /* Firefox */
         -ms-overflow-style: none;  /* IE and Edge */
     }
