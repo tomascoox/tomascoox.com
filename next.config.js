@@ -6,8 +6,15 @@ const nextConfig = {
         return config;
     },
     images: {
-        domains: ['res.cloudinary.com'],
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'res.cloudinary.com',
+                pathname: '/**',
+            },
+        ],
     },
+    // Explicitly disable Turbopack warning if possible, or we will use --webpack flag
 }
 
 module.exports = nextConfig 
