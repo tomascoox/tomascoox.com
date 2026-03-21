@@ -1,0 +1,29 @@
+# .github/dependabot.yml
+version: 2
+updates:
+  # npm/yarn/pnpm (Next.js-projekt i rot)
+  - package-ecosystem: "npm"
+    directory: "/"               # ändra om paketet ligger i t.ex. /web
+    schedule:
+      interval: "daily"          # kör varje dag
+      time: "06:00"
+    open-pull-requests-limit: 20
+    groups:                      # färre PRs vid säkerhetsfixar
+      security-patches:
+        applies-to: security-updates
+        patterns: ["*"]
+    ignore:                      # stora majors tar du manuellt
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+    # valfritt:
+    labels: ["dependencies", "dependabot"]
+    commit-message:
+      prefix: "deps"
+      include: "scope"
+
+  # GitHub Actions (om du har workflows)
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels: ["dependencies", "dependabot"]
