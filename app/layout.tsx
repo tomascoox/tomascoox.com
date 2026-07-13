@@ -9,9 +9,25 @@ const lato = Lato({
 })
 
 export const metadata: Metadata = {
-    title: 'Full-Stack Developer, Musician, & Graphic Designer | Tomas Coox',
+    metadataBase: new URL('https://tomascoox.com'),
+    title: 'Tomas Coox — Musiker · Utvecklare · Lärare',
     description:
-        'Explore the versatile portfolio of Tomas Coox, a full-stack web developer, talented musician, and skilled graphic designer specializing in both still and motion graphics. Discover innovative web solutions, captivating music projects, and stunning visual designs.',
+        'Jag bygger saker — på scen, i kod och i klassrummet. Studio Joox, Timrå Kulturskola, Roulette.',
+    openGraph: {
+        title: 'Tomas Coox',
+        description: 'Musiker · Utvecklare · Lärare — på scen, i kod och i klassrummet.',
+        url: 'https://tomascoox.com',
+        siteName: 'Tomas Coox',
+        locale: 'sv_SE',
+        type: 'website',
+        images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Tomas Coox' }],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Tomas Coox',
+        description: 'Musiker · Utvecklare · Lärare',
+        images: ['/og.png'],
+    },
 }
 
 export default function RootLayout({
@@ -21,7 +37,7 @@ export default function RootLayout({
 }>) {
     return (
         <html
-            lang="en"
+            lang="sv"
             className={lato.variable}
         >
             <body className="font-sans bg-black text-white">

@@ -31,6 +31,67 @@ canvas {
   touch-action: none;
 }
 
+/* Filmisk grain-overlay ovanpå rymden — subtil textur, ingen prestandakostnad */
+.grain {
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+/* Lådan stiger mjukt in vid load */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rise {
+  animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Slotsen stiger in stegvis (animationDelay per slot i JSX) */
+@keyframes slot-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slot-rise {
+  animation: slot-rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Medaljongen andas — knappt märkbar levande rörelse */
+@keyframes breathe {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.02);
+  }
+}
+
+.animate-breathe {
+  animation: breathe 5s ease-in-out infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise,
+  .animate-slot-rise,
+  .animate-breathe {
+    animation: none;
+  }
+}
+
 .screen-max-width {
   margin-inline-start: auto;
   margin-inline-end: auto;
