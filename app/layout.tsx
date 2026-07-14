@@ -32,6 +32,10 @@ export const metadata: Metadata = {
         description: 'Musiker · Utvecklare · Lärare',
         images: ['/og.png'],
     },
+    // Google Search Console — ägarverifiering (kopplas sen ihop med GA4).
+    verification: {
+        google: 'WAzRy8bu4OprU7_jRZSwtlGdqR5yp_IJiWNOjqWUVoI',
+    },
 }
 
 export default function RootLayout({
