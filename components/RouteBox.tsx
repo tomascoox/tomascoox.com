@@ -48,7 +48,7 @@ const VENTURES: Venture[] = [
       width: 600,
       height: 201,
       alt: 'Timrå Kulturskola',
-      heightClass: 'h-[3.5rem]',
+      heightClass: 'h-14',
     },
   },
   {
@@ -91,16 +91,16 @@ function SlotInner({ venture }: { venture: Venture }) {
           width={venture.logo.width}
           height={venture.logo.height}
           priority
-          className={`${venture.logo.heightClass ?? 'h-[4.5rem]'} w-auto max-w-[86%] select-none object-contain opacity-90 transition-opacity duration-300 group-hover:opacity-100`}
+          className={`${venture.logo.heightClass ?? 'h-18'} w-auto max-w-[86%] select-none object-contain opacity-90 transition-opacity duration-300 group-hover:opacity-100`}
         />
       ) : (
         // Wordmark-fallback — samma slot-känsla som logo-slots.
-        <span className="block w-full select-none text-center text-[1.35rem] font-bold uppercase leading-[1.1] tracking-[0.2em] [text-indent:0.2em] text-white transition-colors duration-300 group-hover:text-white">
+        <span className="block w-full select-none text-center text-[1.35rem] font-bold uppercase leading-[1.1] tracking-[0.2em] indent-[0.2em] text-white transition-colors duration-300 group-hover:text-white">
           {venture.name}
         </span>
       )}
       {venture.eyebrow && (
-        <span className="block w-full select-none text-center text-[0.58rem] font-medium uppercase tracking-[0.32em] [text-indent:0.32em] text-white">
+        <span className="block w-full select-none text-center text-[0.58rem] font-medium uppercase tracking-[0.32em] indent-[0.32em] text-white">
           {venture.eyebrow}
         </span>
       )}
@@ -109,7 +109,7 @@ function SlotInner({ venture }: { venture: Venture }) {
 }
 
 const SLOT_BASE =
-  'group relative flex w-full items-center justify-center rounded-2xl border border-white/[0.06] bg-white/[0.015] px-5 py-4 transition-all duration-300'
+  'group relative flex w-full items-center justify-center rounded-2xl border border-white/6 bg-white/1.5 px-5 py-4 transition-all duration-300'
 
 export default function RouteBox() {
   return (
@@ -128,11 +128,11 @@ export default function RouteBox() {
         </div>
       </div>
 
-      <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.03] px-7 pb-8 pt-[6.75rem] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.9)] backdrop-blur-xl">
+      <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-white/3 px-7 pb-8 pt-27 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.9)] backdrop-blur-xl">
         {/* Svag topp-glimt så lådan svävar mot rymden */}
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent"
+          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white/40 to-transparent"
         />
 
         {/* Namn / rubrik */}
@@ -164,7 +164,7 @@ export default function RouteBox() {
                 rel="noopener noreferrer"
                 aria-label={venture.name}
                 style={{ animationDelay: `${300 + i * 110}ms` }}
-                className={`${SLOT_BASE} animate-slot-rise cursor-pointer hover:border-white/20 hover:bg-white/[0.05] hover:shadow-[0_0_40px_-8px_rgba(150,180,255,0.35)] active:scale-[0.98]${spanFull}`}
+                className={`${SLOT_BASE} animate-slot-rise cursor-pointer hover:border-white/20 hover:bg-white/5 hover:shadow-[0_0_40px_-8px_rgba(150,180,255,0.35)] active:scale-[0.98]${spanFull}`}
               >
                 <SlotInner venture={venture} />
               </a>

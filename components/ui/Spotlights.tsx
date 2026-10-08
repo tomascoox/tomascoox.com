@@ -21,7 +21,7 @@ export const Spotlights: React.FC = () => {
                             delay: randomDelay,
                             ease: 'easeInOut',
                         }}
-                        className="absolute -top-[11vh] left-1/2 w-[200vh] h-[200vh]"
+                        className="absolute top-[-11vh] left-1/2 w-[200vh] h-[200vh]"
                         style={{
                             transformOrigin: 'top center',
                             transform: `translateX(-50%) rotate(${angle}deg)`,

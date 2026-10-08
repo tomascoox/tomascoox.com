@@ -33,7 +33,7 @@ const Hero = () => {
                                 delay: 1,
                                 ease: 'easeInOut',
                             }}
-                            className="w-60 h-60 md:w-64 md:h-64 lg:w-80 lg:h-80 flex-shrink-0 relative"
+                            className="w-60 h-60 md:w-64 md:h-64 lg:w-80 lg:h-80 shrink-0 relative"
                         >
                             <div className="absolute inset-0 rounded-full bg-white opacity-40 blur-md"></div>
                             <div className="w-full h-full rounded-full overflow-hidden relative z-10">
